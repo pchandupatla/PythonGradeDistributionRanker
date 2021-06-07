@@ -1,8 +1,7 @@
 import pandas
 import sqlite3
 
-from bokeh.client import push_session
-from bokeh.io import output_file, show
+from bokeh.io import output_file
 import numpy as np
 from bokeh.plotting import figure, curdoc
 from bokeh.layouts import column
@@ -63,19 +62,16 @@ p.yaxis.axis_label = '% As'
 def store_select(attr, old, new):
     global dept_selection
     dept_selection = select.value
-    # print(dept_selection)
 
 
 def store_course_num(attr, old, new):
     global course_num
     course_num = course_num_text.value
-    # print(course_num)
 
 
 def store_course_title(attr, old, new):
     global course_title
     course_title = course_title_text.value
-    # print(course_title)
 
 
 def submit():
@@ -104,12 +100,6 @@ def submit():
     f.xaxis.axis_label = 'Professor'
     f.yaxis.axis_label = '% As'
     listOfSubLayouts.append(f)
-
-    print(dept_selection)
-    print(course_num)
-    print(course_title)
-
-    print(df)
     connection.close()
 
 
