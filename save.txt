@@ -1,0 +1,10 @@
+p = figure(x_range=df['prof'], plot_height=250, title="Percentage As",
+           toolbar_location=None, tools="")
+p.vbar(x=df['prof'], top=df['%As'], width=0.9)
+
+# p.xgrid.grid_line_color = None
+p.y_range.start = 0
+p.sizing_mode = 'stretch_both'
+p.xaxis.major_label_orientation = np.pi/4
+p.xaxis.axis_label = 'Professor'
+p.yaxis.axis_label = '% As'
